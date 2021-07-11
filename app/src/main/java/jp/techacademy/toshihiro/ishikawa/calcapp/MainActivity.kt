@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.snackbar.Snackbar.*
 import kotlinx.android.synthetic.main.activity_main.*
+import android.text.TextUtils
 
 
 class MainActivity : AppCompatActivity(),View.OnClickListener {
@@ -23,6 +24,18 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     }
 
     override fun onClick(v: View) {
+        if(editText1.text.toString().equals("")) {
+            Snackbar.make(v, "何か数値を入力してください", Snackbar.LENGTH_INDEFINITE)
+                .setAction("Action") {
+                    Log.d("UI_PARTS", "Snackbarをタップした")
+                }.show()
+        }else if(editText2.text.toString().equals("")) {
+            Snackbar.make(v, "何か数値を入力してください", Snackbar.LENGTH_INDEFINITE)
+                .setAction("Action") {
+                    Log.d("UI_PARTS", "Snackbarをタップした")
+                }.show()
+        }else{
+
         if (v.id == R.id.button1) {
             val intent = Intent(this, MainActivity2::class.java)
             intent.putExtra(
@@ -53,11 +66,8 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             )
             startActivity(intent)
         }
-
-        if (editText1.length() == 0 && editText2.length() == 0) {
-            Snackbar.make(v, "何か数値を入力してください", Snackbar.LENGTH_INDEFINITE)
-                .show()
+       }
         }
     }
-}
+
 
