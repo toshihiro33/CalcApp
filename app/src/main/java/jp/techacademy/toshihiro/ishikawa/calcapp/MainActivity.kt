@@ -23,36 +23,41 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        if (v.id==R.id.button1){
+        if (v.id == R.id.button1) {
             val intent = Intent(this, MainActivity2::class.java)
             intent.putExtra(
                 "VALUE1",
-                editText1.text.toString().toDouble() +editText2.text.toString().toDouble()
+                editText1.text.toString().toDouble() + editText2.text.toString().toDouble()
             )
             startActivity(intent)
-           }else if(v.id==R.id.button2) {
+        } else if (v.id == R.id.button2) {
             val intent = Intent(this, MainActivity2::class.java)
             intent.putExtra(
                 "VALUE1",
-                editText1.text.toString().toDouble() -editText2.text.toString().toDouble()
+                editText1.text.toString().toDouble() - editText2.text.toString().toDouble()
             )
             startActivity(intent)
 //            Log.d("kotlintest",(editText1.text.toString()).toInt())
-            }else if(v.id==R.id.button3){
+        } else if (v.id == R.id.button3) {
             val intent = Intent(this, MainActivity2::class.java)
             intent.putExtra(
                 "VALUE1",
-                editText1.text.toString().toDouble() *editText2.text.toString().toDouble()
+                editText1.text.toString().toDouble() * editText2.text.toString().toDouble()
             )
-            startActivity(intent)}else if(v.id==R.id.button4){
+            startActivity(intent)
+        } else if (v.id == R.id.button4) {
             val intent = Intent(this, MainActivity2::class.java)
             intent.putExtra(
                 "VALUE1",
-                editText1.text.toString().toDouble() /editText2.text.toString().toDouble()
+                editText1.text.toString().toDouble() / editText2.text.toString().toDouble()
             )
-            startActivity(intent)}
-
+            startActivity(intent)
         }
 
+        if (editText1.length() == 0 && editText2.length() == 0) {
+            Snackbar.make(v, "何か数値を入力してください", Snackbar.LENGTH_INDEFINITE)
+                .show()
+        }
     }
+}
 
