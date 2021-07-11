@@ -34,21 +34,21 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
             intent.putExtra(
                 "VALUE1",
-                Integer.parseInt(editText1.text.toString()) - Integer.parseInt(editText2.text.toString())
+                editText1.text.toString().toDouble() -editText2.text.toString().toDouble()
             )
             startActivity(intent)
-            Log.d("kotlintest",(editText1.text.toString()).toInt())
+//            Log.d("kotlintest",(editText1.text.toString()).toInt())
             }else if(v.id==R.id.button3){
             val intent = Intent(this, MainActivity2::class.java)
             intent.putExtra(
                 "VALUE1",
-                Integer.parseInt(editText1.text.toString()) * Integer.parseInt(editText2.text.toString())
+                editText1.text.toString().toDouble() *editText2.text.toString().toDouble()
             )
             startActivity(intent)}else if(v.id==R.id.button4){
             val intent = Intent(this, MainActivity2::class.java)
             intent.putExtra(
                 "VALUE1",
-                Integer.parseInt(editText1.text.toString()) / Integer.parseInt(editText2.text.toString())
+                editText1.text.toString().toDouble() /editText2.text.toString().toDouble()
             )
             startActivity(intent)}
 

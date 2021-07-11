@@ -13,7 +13,7 @@ class MainActivity2 : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
-        textView.text= intent.getIntExtra("VALUE1", 0).toString()
+        textView.text= intent.getDoubleExtra("VALUE1", 0.0).toString()
 
 }
     }
